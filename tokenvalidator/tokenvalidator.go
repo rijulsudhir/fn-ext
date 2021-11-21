@@ -8,8 +8,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/fnproject/fn/api/server"
-	"github.com/fnproject/fn/fnext"
+	"github.com/rijulsudhir/fn-1/api/server"
+	"github.com/rijulsudhir/fn-1/fnext"
 
 	jwt "github.com/dgrijalva/jwt-go"
 )
@@ -36,7 +36,7 @@ func (e *tokenvalidatorExt) Name() string {
 }
 
 func (e *tokenvalidatorExt) Setup(s fnext.ExtServer) error {
-	s.AddRootMiddleware(&tokenvalidatorMiddleware{})
+	s.AddAppMiddleware(&tokenvalidatorMiddleware{})
 	return nil
 }
 
